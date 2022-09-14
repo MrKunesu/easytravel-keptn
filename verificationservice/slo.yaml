@@ -8,16 +8,16 @@ comparison:
 objectives:
     - sli: service-verification
       displayName: ""
-      pass: []
-      warning: []
-      weight: 1
-      key_sli: false
+      pass: [30000]
+      warning: [40000]
+      weight: 2
+      key_sli: true
     - sli: problems
       displayName: ""
       pass:
         - criteria:
             - <=0
-      warning: []
+      warning: [3]
       weight: 1
       key_sli: true
     - sli: SLO_CA
