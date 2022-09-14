@@ -1,20 +1,12 @@
 spec_version: 0.1.4
 indicators:
-    SLA_for_keptn_services: SLO;02463363-77ad-3c24-88a7-9a526123d445
-    SLO_CA: SLO;0ba3aca8-545f-3aa2-98b6-fdee86707f31
-    a_apdex: entitySelector=type(APPLICATION),mzId(all)&metricSelector=builtin:apps.web.apdex.userType:splitBy():avg:names
-    a_load_avg: entitySelector=type(APPLICATION),mzId(all)&metricSelector=builtin:apps.web.actionDuration.load.browser:splitBy():avg:names
-    a_xhr_avg: entitySelector=type(APPLICATION),mzId(all)&metricSelector=builtin:apps.web.actionDuration.xhr.browser:splitBy():avg:names
-    fr_avg: entitySelector=type(SERVICE),mzId(all)&metricSelector=builtin:service.errors.server.rate:splitBy():avg:names
-    h_cpu_avg: entitySelector=type(HOST),mzId(all)&metricSelector=builtin:host.cpu.usage:splitBy():avg:names
-    h_disk_max: entitySelector=type(HOST),mzId(all)&metricSelector=builtin:host.disk.queueLength:splitBy():max:names
-    h_mem_avg: entitySelector=type(HOST),mzId(all)&metricSelector=builtin:host.mem.usage:splitBy():avg:names
-    njs_event_lat: entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(all)&metricSelector=builtin:tech.nodejs.uvLoop.loopLatency:splitBy():avg:names
-    njs_tick_dur: entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(all)&metricSelector=builtin:tech.nodejs.uvLoop.totalTime:splitBy():avg:names
-    njs_tick_freq: entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(all)&metricSelector=builtin:tech.nodejs.uvLoop.count:splitBy():avg:names
-    njs_work_lat: entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(all)&metricSelector=builtin:tech.nodejs.uvLoop.processedLatency:splitBy():avg:names
-    p_cpu_avg: entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(all)&metricSelector=builtin:tech.generic.cpu.usage:splitBy():avg:names
-    p_mem_avg: entitySelector=type(PROCESS_GROUP_INSTANCE),mzId(all)&metricSelector=builtin:tech.generic.mem.usage:splitBy():avg:names
-    rc_sum: entitySelector=type(SERVICE),mzId(all)&metricSelector=builtin:service.requestCount.total:splitBy():avg:names
-    rt_p50: entitySelector=type(SERVICE),mzId(all)&metricSelector=builtin:service.response.time:splitBy():median:names
-    rt_p90: entitySelector=type(SERVICE),mzId(all)&metricSelector=builtin:service.response.time:splitBy():percentile(90):names
+    host_cpu: metricSelector=builtin:host.cpu.usage:splitBy():avg:names
+    host_disk_queue: metricSelector=builtin:host.disk.queueLength:splitBy():avg:names
+    host_mem: metricSelector=builtin:host.mem.usage:splitBy():avg:names
+    proc_count: metricSelector=builtin:tech.generic.processCount:splitBy():avg:names
+    process_cpu: metricSelector=builtin:tech.generic.cpu.usage:splitBy():avg:names
+    process_memory: MV2;Byte;metricSelector=builtin:tech.generic.mem.workingSetSize:splitBy():avg:names
+    svc_fr: metricSelector=builtin:service.errors.total.rate:splitBy():avg:names
+    svc_rt_p95: ""
+    svc_tp_min: ""
+    svc2svc_calls: metricSelector=builtin:service.nonDbChildCallCount:splitBy():avg:names
