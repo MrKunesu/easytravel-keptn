@@ -1,4 +1,4 @@
-spec_version: "1.0"
+spec_version: ""
 filter: {}
 comparison:
     compare_with: single_result
@@ -6,30 +6,155 @@ comparison:
     number_of_comparison_results: 1
     aggregate_function: avg
 objectives:
-    - sli: response_time_p95
+    - sli: rt_p50
       displayName: ""
       pass:
         - criteria:
-            - <600
+            - <200
+            - <+10%
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: rt_p90
+      displayName: ""
+      pass:
+        - criteria:
+            - <43272.46
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: fr_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <+5.00%
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: rc_sum
+      displayName: ""
+      pass:
+        - criteria:
+            - '>100'
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: h_disk_max
+      displayName: ""
+      pass:
+        - criteria:
+            - <0.01
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: h_mem_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <17.13
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: h_cpu_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <4.69
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: p_cpu_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <0.08
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: p_mem_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <0.58
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: a_apdex
+      displayName: ""
+      pass:
+        - criteria:
+            - '>0.95'
+      warning: []
+      weight: 5
+      key_sli: true
+    - sli: a_xhr_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <112.56
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: a_load_avg
+      displayName: ""
+      pass:
+        - criteria:
+            - <474.54
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: njs_tick_freq
+      displayName: ""
+      pass:
+        - criteria:
+            - '>92.66'
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: njs_tick_dur
+      displayName: ""
+      pass:
+        - criteria:
+            - <104026595.21
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: njs_work_lat
+      displayName: ""
+      pass:
+        - criteria:
+            - <50784.82
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: njs_event_lat
+      displayName: ""
+      pass:
+        - criteria:
+            - <1664746.41
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: SLA_for_keptn_services
+      displayName: ""
+      pass:
+        - criteria:
+            - '>=97.000000'
       warning:
         - criteria:
-            - <=800
+            - '>=95.000000'
       weight: 1
       key_sli: false
-    - sli: error_rate
+    - sli: SLO_CA
       displayName: ""
       pass:
         - criteria:
-            - <5
-      warning: []
+            - '>=97.000000'
+      warning:
+        - criteria:
+            - '>=95.000000'
       weight: 1
-      key_sli: false
-    - sli: throughput
-      displayName: ""
-      pass: []
-      warning: []
-      weight: 0
       key_sli: false
 total_score:
     pass: 90%
-    warning: 75%
+    warning: 70%
