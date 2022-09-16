@@ -8,10 +8,12 @@ comparison:
 objectives:
     - sli: service-verification
       displayName: ""
-      pass: []
+      pass:
+        - criteria:
+            - <30000
       warning: []
-      weight: 1
-      key_sli: false
+      weight: 2
+      key_sli: true
     - sli: problems
       displayName: ""
       pass:
