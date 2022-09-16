@@ -1,0 +1,35 @@
+spec_version: ""
+filter: {}
+comparison:
+    compare_with: single_result
+    include_result_with_score: pass
+    number_of_comparison_results: 1
+    aggregate_function: avg
+objectives:
+    - sli: service-verification
+      displayName: ""
+      pass: []
+      warning: []
+      weight: 1
+      key_sli: false
+    - sli: problems
+      displayName: ""
+      pass:
+        - criteria:
+            - <=0
+      warning: []
+      weight: 1
+      key_sli: true
+    - sli: SLO_CA
+      displayName: ""
+      pass:
+        - criteria:
+            - '>=97.000000'
+      warning:
+        - criteria:
+            - '>=95.000000'
+      weight: 1
+      key_sli: false
+total_score:
+    pass: 90%
+    warning: 75%
