@@ -1,0 +1,13 @@
+apiVersion: webhookconfig.keptn.sh/v1alpha1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.evaluation.>
+      requests:
+        - >-
+          curl --header 'Content-Type: text/html' --header 'Content-Length: 40' --request POST --data '{{.data.project}}{{.id}}{{.shkeptncontext}}{{.source}}{{.type}}{{.time}}' https://dynatrace.webhook.office.com/webhookb2/883a3e60-9a6a-4733-a43f-12e4e56a1916@70ebe3a3-5b30-435d-9d67-7716d74ca190/IncomingWebhook/c38002a67ab544f391b0045d43a0a11b/35684b75-1845-414a-be1e-d046ecdb70d7
+      subscriptionID: 19ffa385-7772-4861-bfe8-bb7578a0b2bd
+      sendFinished: true
+      sendStarted: true
