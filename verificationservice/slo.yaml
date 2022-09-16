@@ -11,7 +11,9 @@ objectives:
       pass:
         - criteria:
             - <30000
-      warning: []
+      warning:
+        - criteria:
+            - <40000
       weight: 2
       key_sli: true
     - sli: problems
