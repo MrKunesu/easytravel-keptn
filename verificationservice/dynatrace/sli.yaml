@@ -1,5 +1,0 @@
-spec_version: 0.1.4
-indicators:
-    SLO_CA: SLO;0ba3aca8-545f-3aa2-98b6-fdee86707f31
-    problems: PV2;problemSelector=status("open")
-    service-verification: MV2;MicroSecond;entitySelector=type(SERVICE),tag("keptn_service:verificationservice")&metricSelector=builtin:service.response.server:splitBy():auto:names
